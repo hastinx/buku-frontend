@@ -1,3 +1,6 @@
+*{
+  
+}
 .App {
   text-align: center;
 }
@@ -35,4 +38,70 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.wrap{
+  width:350px;
+  word-wrap: break-word;
+}
+.w-80{
+  width: 80%;
+}
+.w-20{
+  width: 20%;
+}
+.favorite{
+  font-size: 32px;
+}
+
+.favorite:hover{
+  cursor: pointer;
+  color: red;
+}
+
+.favorite-active{
+  font-size: 32px;
+  color: red;
+}
+.favorite-active:hover{
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+}
+.header-search-box{
+  width:600px
+}
+.header-favorite{
+  cursor: pointer;
+}
+
+.header-favorite:hover{
+  color: red;
+  cursor: pointer;
+}
+.header-favorite-badge{
+  background-color: red;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 6px;
+  border-radius: 50px;
+  width: 21px;
+  height: 21px;
+  cursor: pointer;
+}
+.header-logo{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 32px;
+  font-weight: 600;
+}
+.content{
+  padding-top: 50px;
+  padding-left:10%;
+  padding-right: 10%;
+}
+
+.card:hover{
+  transform: scale(1.05);
+  z-index: 2;
 }
