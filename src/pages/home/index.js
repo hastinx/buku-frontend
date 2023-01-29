@@ -122,7 +122,7 @@ const Home = () => {
     return (
         <>
             <ToastContainer />
-            <div className='bg-dark'>
+            <div className='bg-dark vh-100'>
                 <div className="d-flex flex-row justify-content-between align-items-center bg-light px-5 py-3">
                     <div className="fs-2 fw-bold">BUKU</div>
                     <div className='d-flex header-search-box'>

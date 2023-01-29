@@ -50,47 +50,50 @@ const FavoritePage = () => {
     return (
         <>
             <ToastContainer />
-            <div className="d-flex flex-row justify-content-between align-items-center bg-light px-5 py-3">
-                <div className="fs-2 fw-bold">BUKU</div>
+            <div className='bg-dark vh-100'>
+                <div className="d-flex flex-row justify-content-between align-items-center bg-light px-5 py-3">
+                    <div className="fs-2 fw-bold">BUKU</div>
+                    <div className="fs-4 fw-bold">Favorites</div>
+                    <div className='d-flex align-items-center header-favorite fs-5' onClick={back}>Back</div>
+                </div>
+                <div className='d-flex flex-wrap gap-4 justify-content-center mt-5 bg-dark'>
+                    {book.length < 1 ? <span className='fs-3 fw-bold text-white'> Anda belum memilih buku favorit anda...</span> : ''}
+                    {book.map(i =>
 
-                <div className='d-flex align-items-center header-favorite fs-5' onClick={back}>Back</div>
-            </div>
-            <div className='d-flex flex-wrap gap-4 justify-content-center mt-5'>
-                {book.length < 1 ? <span className='fs-3 fw-bold'> Anda belum memilih buku favorit anda...</span> : ''}
-                {book.map(i =>
 
+                        <div key={i.id}>
+                            <div className="card" style={{ width: '300px', height: '100%' }} >
 
-                    <div key={i.id}>
-                        <div className="card" style={{ width: '300px', height: '100%' }} >
+                                <img src={i.imgurl} className="card-img-top" alt="Placeholder image" style={{ width: '300px', height: '450px' }} />
 
-                            <img src={i.imgurl} className="card-img-top" alt="Placeholder image" style={{ width: '300px', height: '450px' }} />
-
-                            <div className="card-body d-grid gap-3">
-                                <div className='row'>
-                                    <div className='col-md-12'>
-                                        <h5 class="card-title">{i.title}</h5>
+                                <div className="card-body d-grid gap-3">
+                                    <div className='row'>
+                                        <div className='col-md-12'>
+                                            <h5 class="card-title">{i.title}</h5>
+                                        </div>
                                     </div>
+                                    <div className='row'>
+                                        <div className='col-md-12'>
+                                            <p class="card-text">{i.authors}</p>
+                                        </div>
+                                    </div>
+                                    <div className='row'>
+                                        <div className='col-md-8 d-flex align-items-center justify-content-start'>
+                                            <Rate rating={i.rating ? i.rating : 0} />
+                                        </div>
+                                        <div className='col-md-4 d-flex align-items-center justify-content-center'>
+                                            <FaHeart className='favorite-active' onClick={deleteFavorite} id={i.bookid} />
+                                        </div>
+                                    </div>
+
                                 </div>
-                                <div className='row'>
-                                    <div className='col-md-12'>
-                                        <p class="card-text">{i.authors}</p>
-                                    </div>
-                                </div>
-                                <div className='row'>
-                                    <div className='col-md-8 d-flex align-items-center justify-content-start'>
-                                        <Rate rating={i.rating ? i.rating : 0} />
-                                    </div>
-                                    <div className='col-md-4 d-flex align-items-center justify-content-center'>
-                                        <FaHeart className='favorite-active' onClick={deleteFavorite} id={i.bookid} />
-                                    </div>
-                                </div>
-
                             </div>
                         </div>
-                    </div>
-                )}
+                    )}
 
+                </div>
             </div>
+
         </>
     )
 }
