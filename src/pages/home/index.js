@@ -18,7 +18,7 @@ const Home = () => {
 
     const GetData = async () => {
         const data = await useGet("https://www.googleapis.com/books/v1/volumes?q=", param)
-        console.log(data)
+
         if (data.items !== undefined) {
             setBook(data.items)
         } else {
